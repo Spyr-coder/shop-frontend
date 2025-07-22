@@ -1,0 +1,38 @@
+/* 📁 src/styles/backgrounds.css */
+
+/* ✅ Dashboard with faded background image + logos */
+.dashboard-bg {
+  position: relative;
+  min-height: 100vh;
+  background-image:
+    url('../assets/barber-bg.jpg'),
+    url('../assets/logo1.png'),
+    url('../assets/logo3.png');
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: center center, top left, bottom right;
+  background-size: cover, 200px, 200px;
+  z-index: -1;
+  filter: brightness(0.5); /* faded effect */
+}
+
+/* Enlarged and centered logo */
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 400px;
+  width: 80%;
+  height: auto;
+  opacity: 0.95;
+  padding: 10px 0;
+}
+
+/* Container styling */
+.container {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
