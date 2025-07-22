@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://shop-backend-qp87.onrender.com',
+  baseURL: 'https://shop-backend-qp87.onrender.com/api', // ✅ includes /api
 });
 
 API.interceptors.request.use(
