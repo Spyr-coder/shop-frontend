@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import API from '../services/api';
 
 export default function RegisterPage() {
@@ -19,7 +19,7 @@ export default function RegisterPage() {
         password: password.trim(),
       });
       console.log('Server response:', res.data);
-      navigate('/');
+      navigate('/login');
     } catch (err) {
       console.error('Register Error:', err.response ? err.response.data : err);
       alert('Registration failed');
@@ -58,6 +58,14 @@ export default function RegisterPage() {
           Register
         </button>
       </form>
+
+      {/* 🔐 Login link */}
+      <p style={{ marginTop: '1rem', textAlign: 'center' }}>
+        Already have an account?{' '}
+        <Link to="/login" style={{ textDecoration: 'underline' }}>
+          Login here
+        </Link>
+      </p>
     </div>
   );
 }
