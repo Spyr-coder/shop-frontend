@@ -241,10 +241,10 @@ export default function Dashboard() {
               <strong>Pay KES 200 to:</strong>
             </p>
             <p>
-              <strong>Paybill:</strong> 123456
+              <strong>Paybill:</strong> 572536
             </p>
             <p>
-              <strong>Account:</strong> YOUR_PHONE_NUMBER
+              <strong>Account:</strong> 0748170164
             </p>
             <button onClick={handleMarkPaid}>Mark as Paid</button>
           </div>
