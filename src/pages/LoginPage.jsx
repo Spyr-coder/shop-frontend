@@ -15,7 +15,8 @@ export default function LoginPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await API.post('/auth/login', { phone, password });
+      // ✅ FIXED: Changed '/auth/login' to '/shops/login'
+      const res = await API.post('/shops/login', { phone, password });
       saveToken(res.data.token);
       navigate('/dashboard');
     } catch (err) {
