@@ -49,22 +49,7 @@ export default function Dashboard() {
 
   const handleMarkPaid = async () => {
     try {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        alert('No token found. Please log in again.');
-        return;
-      }
-
-      await API.post(
-        '/shops/mark-paid',
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
+      await API.post('/shops/mark-paid');
       alert('Subscription activated! Reloading...');
       window.location.reload();
     } catch (err) {
@@ -81,16 +66,7 @@ export default function Dashboard() {
     }
 
     try {
-      const token = localStorage.getItem('token');
-      const res = await API.post(
-        '/customers/register',
-        { name, phone },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const res = await API.post('/customers/register', { name, phone });
 
       alert('Customer added!');
       setCustomers((prev) => [...prev, res.data]);
@@ -112,16 +88,10 @@ export default function Dashboard() {
     }
 
     try {
-      const token = localStorage.getItem('token');
-      const res = await API.post(
-        '/customers/register',
-        { name: 'Returning', phone: returnPhone },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const res = await API.post('/customers/register', {
+        name: 'Returning',
+        phone: returnPhone,
+      });
 
       const updated = res.data;
       setCustomers((prev) =>
@@ -147,12 +117,7 @@ export default function Dashboard() {
     if (!feedbackMsg.trim()) return alert('Please enter feedback');
 
     try {
-      const token = localStorage.getItem('token');
-      await API.post(
-        '/feedback',
-        { message: feedbackMsg },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
+      await API.post('/feedback', { message: feedbackMsg });
       alert('✅ Feedback sent. Thank you!');
       setFeedbackMsg('');
     } catch (err) {
@@ -166,7 +131,6 @@ export default function Dashboard() {
       <div className="container">
         <img src="/logo.png" alt="Logo" className="logo centered-logo" />
 
-        {/* 💐 Updated Welcome Message */}
         <h1 className="welcome-banner">
           👋 Hello,{' '}
           <span className="shop-name">{profile.name || 'Shop Owner'}</span>!
@@ -246,7 +210,9 @@ export default function Dashboard() {
             <p>
               <strong>Account:</strong> 0748170164
             </p>
-            <button onClick={handleMarkPaid}>Mark as Paid</button>
+            <button type="button" onClick={handleMarkPaid}>
+              Mark as Paid
+            </button>
           </div>
         )}
 
