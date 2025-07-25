@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# 🏪 Shop Capstone Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple **Shop Owner Loyalty & Customer Management App** — built with **MERN Stack** (MongoDB, Express, React, Node.js).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Overview
 
-### `npm start`
+This project helps shop owners:
+- ✅ Register and log in securely
+- ✅ Add customers to a loyalty list
+- ✅ Track how many times a customer visits
+- ✅ Reward loyal customers
+- ✅ Manage customers easily with a clean dashboard
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Features
 
-### `npm test`
+- **Shop Owner Auth:** Register & Login with JWT tokens
+- **Customer Registry:** Add new customers with name & phone
+- **Visit Counter:** Automatically counts total visits
+- **Dashboard:** View & manage all your customers
+- **Protected Routes:** Only logged-in shop owners can manage customers
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## ⚙️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Layer | Tech |
+|-------|------|
+| Frontend | React, Axios, React Router |
+| Backend | Node.js, Express |
+| Database | MongoDB, Mongoose |
+| Auth | JWT (JSON Web Tokens) |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📂 Project Structure
 
-### `npm run eject`
+```plaintext
+shop-capstone/
+ ├── client/               # React frontend
+ │   ├── src/
+ │   │   ├── components/   # Login, Register, Dashboard, AddCustomer
+ │   │   ├── services/     # Axios API instance
+ │   │   ├── styles/       # CSS files
+ │   │   └── App.js
+ │   └── public/
+ ├── server/               # Node.js + Express backend
+ │   ├── controllers/      # Auth & Customer logic
+ │   ├── models/           # Mongoose Schemas
+ │   ├── routes/           # API Routes
+ │   ├── middleware/       # Auth Middleware
+ │   ├── config/           # DB config
+ │   └── server.js
+ ├── .env                  # Environment variables
+ ├── package.json
+ └── README.md
+⚡ How to Run Locally
+1️⃣ Clone the repo
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+Copy
+Edit
+git clone https://github.com/YOUR_USERNAME/shop-capstone.git
+cd shop-capstone
+2️⃣ Install backend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bash
+Copy
+Edit
+cd server
+npm install
+3️⃣ Install frontend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+bash
+Copy
+Edit
+cd ../client
+npm install
+4️⃣ Setup environment
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create .env in /server:
 
-## Learn More
+env
+Copy
+Edit
+MONGO_URI=YOUR_MONGO_CONNECTION_STRING
+JWT_SECRET=YOUR_SECRET_KEY
+5️⃣ Run backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+Copy
+Edit
+cd ../server
+npm run dev
+6️⃣ Run frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+bash
+Copy
+Edit
+cd ../client
+npm start
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Here is a link to my app on Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Here is a link to my backend on Render
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Here  is a link to a short demo on how my app works
+https://drive.google.com/file/d/12HtukQUhp6pHGAb1Pld_4nsGM_wPKHoT/view?usp=drive_link
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
